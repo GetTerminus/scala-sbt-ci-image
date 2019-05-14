@@ -5,7 +5,6 @@ ENV SCALA_VERSION 2.11.11
 ENV SBT_VERSION 1.2.8
 
 # Install Scala
-## Piping curl directly in tar
 RUN \
     wget http://scala-lang.org/files/archive/scala-$SCALA_VERSION.deb && \
     dpkg -i scala-$SCALA_VERSION.deb && \
