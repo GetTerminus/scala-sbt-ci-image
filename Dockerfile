@@ -11,6 +11,8 @@ RUN \
     apt-get update && \
     apt-get install scala
 
+COPY build.sbt build.sbt
+
 # Install sbt
 RUN \
     wget https://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb && \
@@ -18,9 +20,7 @@ RUN \
     rm sbt-$SBT_VERSION.deb && \
     apt-get update && \
     apt-get install sbt  && \
-    sbt sbtVersion && \
     mkdir project && \
-    echo "scalaVersion := \"${SCALA_VERSION}\"" > build.sbt && \
     echo "sbt.version=${SBT_VERSION}" > project/build.properties && \
     echo "case object Temp" > Temp.scala && \
     sbt compile && \
