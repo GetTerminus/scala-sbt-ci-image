@@ -1,5 +1,7 @@
 scalaVersion := "2.11.11"
 
+resolvers += "aws-glue-etl-artifacts" at "https://aws-glue-etl-artifacts.s3.amazonaws.com/release/"
+
 val sparkVersion = "2.4.3"
 
 libraryDependencies ++= Seq(
