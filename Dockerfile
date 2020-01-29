@@ -1,7 +1,7 @@
 FROM getterminus/java-ci-image:20190122
 
 # Env variables
-ENV SCALA_VERSION 2.11.11
+ENV SCALA_VERSION 2.11.12
 ENV SBT_VERSION 1.2.8
 
 # Install Scala
