@@ -2,7 +2,7 @@ FROM getterminus/java-ci-image:20190122
 
 # Env variables
 ENV SCALA_VERSION 2.11.12
-ENV SBT_VERSION 1.2.8
+ENV SBT_VERSION 1.3.8
 
 # Install Scala
 RUN \
@@ -20,7 +20,7 @@ RUN \
     rm sbt-$SBT_VERSION.deb && \
     apt-get update && \
     apt-get install sbt  && \
-    mkdir project && \
+    mkdir project && \    
     echo "sbt.version=${SBT_VERSION}" > project/build.properties && \
     echo "case object Temp" > Temp.scala && \
     sbt compile && \
